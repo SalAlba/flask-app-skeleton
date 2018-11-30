@@ -45,4 +45,4 @@ You’ll see output similar to this:
 * Debugger PIN: 855-212-761
 ```
 
-Visit [http://127.0.0.1:5000/hello](http://127.0.0.1:5000/hello) in a browser and you should see the “Hello, World!” message. Congratulations, you’re now running your Flask web application!
+Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) or [http://127.0.0.1:5000/hello](http://127.0.0.1:5000/hello) in a browser and you should see the “Hello, World!” message. Congratulations, you’re now running your Flask web application!
