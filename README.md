@@ -65,3 +65,73 @@ Run the init-db command:
     $ flask init-db
 ```
 There will now be a flaskr.sqlite file in the instance folder in your project.
+
+
+# Make the Project Installable
+
+See the (official packaging guide)[https://packaging.python.org/tutorials/packaging-projects/] for another explanation of the files and options used.
+
+
+# Install the Project
+Use **pip** to install your project in the virtual environment.
+
+``` bash
+    $ pip install -e .
+```
+This tells pip to find **setup.py** in the current directory and install it in editable or development mode. Editable mode means that as you make changes to your local code, you’ll only need to re-install if you change the metadata about the project, such as its dependencies.
+
+
+# Running the Tests
+
+To run the tests, use the **pytest** command. It will find and run all the test functions you’ve written.
+
+``` bash
+
+pytest
+
+========================= test session starts ==========================
+platform linux -- Python 3.6.4, pytest-3.5.0, py-1.5.3, pluggy-0.6.0
+rootdir: /home/user/Projects/flask-tutorial, inifile: setup.cfg
+collected 23 items
+
+tests/test_auth.py ........                                      [ 34%]
+tests/test_blog.py ............                                  [ 86%]
+tests/test_db.py ..                                              [ 95%]
+tests/test_factory.py ..                                         [100%]
+
+====================== 24 passed in 0.64 seconds =======================
+```
+
+If any tests fail, pytest will show the error that was raised. You can run **pytest -v** to get a list of each test function rather than dots.
+
+To measure the code coverage of your tests, use the **coverage** command to run pytest instead of running it directly.
+
+
+``` bash
+
+coverage run -m pytest
+
+```
+You can either view a simple coverage report in the terminal:
+
+``` bash
+coverage report
+
+Name                 Stmts   Miss Branch BrPart  Cover
+------------------------------------------------------
+flaskr/__init__.py      21      0      2      0   100%
+flaskr/auth.py          54      0     22      0   100%
+flaskr/blog.py          54      0     16      0   100%
+flaskr/db.py            24      0      4      0   100%
+------------------------------------------------------
+TOTAL                  153      0     44      0   100%
+```
+
+An HTML report allows you to see which lines were covered in each file:
+
+
+``` bash
+coverage html
+```
+
+This generates files in the htmlcov directory. Open htmlcov/index.html in your browser to see the report.
